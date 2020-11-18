@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+// eslint-disable-next-line
 interface AppProps {}
 
+// eslint-disable-next-line
 function App({}: AppProps) {
   // Create the count state.
   const [count, setCount] = useState(0);
