@@ -3,8 +3,14 @@
     "start": "snowpack dev",
     "build": "snowpack build",
     "test": "web-test-runner \"src/**/*.test.tsx\"",
-    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
-    "lint": "prettier --check \"src/**/*.{js,jsx,ts,tsx}\""
+    "lint": "yarn prettier:lint && yarn eslint:lint && yarn stylelint:lint",
+    "lint:format": "yarn prettier:format && yarn eslint:format && yarn stylelint:format",
+    "prettier:lint": "prettier --check \"src/**/*.{js,jsx,ts,tsx}\"",
+    "prettier:format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
+    "eslint:lint": "eslint ./src --ext .js,.jsx,.ts,.tsx",
+    "eslint:format": "eslint --fix ./src --ext .js,.jsx,.ts,.tsx",
+    "stylelint:lint": "stylelint \"src/**/*.css\"",
+    "stylelint:format": "stylelint --fix \"src/**/*.css\""
   },
   "dependencies": {
     "react": "^17.0.0",
